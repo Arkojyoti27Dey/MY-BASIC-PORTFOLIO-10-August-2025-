@@ -121,7 +121,9 @@ h1, h2 {
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
 
 h2 {
@@ -134,27 +136,49 @@ h2 {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     text-align: center;
+    position: relative;
+    padding: 0; /* Override default section padding */
+    background-image: url('http://googleusercontent.com/file_content/4'); /* Using one of your photos */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Creates a parallax-like effect */
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for text readability */
+    z-index: 1;
 }
 
 .hero-content {
+    position: relative;
+    z-index: 2;
     max-width: 800px;
     margin: 0 auto;
 }
 
 .hero-content p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 2rem;
-    color: #a0a0a0;
+    color: #f0f0f0;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 }
 
 .social-links a {
-    color: var(--text-color);
+    color: #fff;
     text-decoration: none;
     margin: 0 1rem;
-    font-weight: 500;
+    font-weight: 600;
     position: relative;
     padding-bottom: 5px;
+    font-size: 1.1rem;
 }
 
 .social-links a::after {
@@ -171,48 +195,9 @@ h2 {
 /* About Section */
 .about-container {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 1fr; /* Single column now */
+    gap: 2rem;
     align-items: center;
-}
-
-.about-photos {
-    position: relative;
-    height: 350px; /* Container for positioning */
-}
-
-.about-photo {
-    width: 200px;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 8px;
-    border: 2px solid var(--secondary-color);
-    position: absolute;
-    transition: transform 0.4s ease-in-out;
-}
-
-.about-photo:hover {
-    z-index: 10;
-    transform: scale(1.1) rotate(0deg) !important;
-}
-
-.photo1 {
-    top: 0;
-    left: 0;
-    transform: rotate(-10deg);
-}
-
-.photo2 {
-    top: 50px;
-    left: 80px;
-    transform: rotate(5deg);
-    z-index: 2;
-}
-
-.photo3 {
-    top: 20px;
-    left: 160px;
-    transform: rotate(15deg);
 }
 
 
@@ -386,7 +371,7 @@ nav ul li a:hover,
 /* Responsive Design */
 @media (max-width: 768px) {
     h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
 
     h2 {
@@ -400,14 +385,8 @@ nav ul li a:hover,
     section {
         padding: 6rem 0;
     }
-
-    .about-container {
-        grid-template-columns: 1fr;
-        gap: 4rem;
-    }
-
-    .about-photos {
-        margin: 0 auto;
-        height: 300px;
+    
+    #hero {
+        background-attachment: scroll; /* Parallax effect doesn't work well on mobile */
     }
 }
