@@ -224,21 +224,6 @@ h2 {
     transition: width 0.3s ease;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-/* About Section */
-.about-container {
-    display: grid;
-    grid-template-columns: 1fr; /* Single column now */
-    gap: 2rem;
-    align-items: center;
-}
-
-
-=======
->>>>>>> parent of b7148e8 (added photo in new stlye 3 ek sath)
-=======
->>>>>>> parent of b7148e8 (added photo in new stlye 3 ek sath)
 /* Project Section */
 .project-grid {
     display: grid;
@@ -320,31 +305,6 @@ h2 {
 }
 
 
-<<<<<<< HEAD
-/* Gallery Section */
-.photo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.photo-grid img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-    border: 1px solid var(--secondary-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.photo-grid img:hover {
-    transform: scale(1.05) translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-}
-
-
-=======
->>>>>>> parent of b7148e8 (added photo in new stlye 3 ek sath)
 /* Education Timeline */
 .timeline {
     position: relative;
@@ -470,19 +430,4 @@ nav ul li a:hover,
     section {
         padding: 6rem 0;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-    .hero-photo {
-        width: 180px;
-    }
-
-    .hero-content {
-        padding: 1.5rem;
-        max-width: 90%;
-    }
-=======
->>>>>>> parent of b7148e8 (added photo in new stlye 3 ek sath)
-=======
->>>>>>> parent of b7148e8 (added photo in new stlye 3 ek sath)
 }
