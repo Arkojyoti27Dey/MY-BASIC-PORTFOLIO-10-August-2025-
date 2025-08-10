@@ -225,6 +225,7 @@ h2 {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* About Section */
 .about-container {
     display: grid;
@@ -234,6 +235,8 @@ h2 {
 }
 
 
+=======
+>>>>>>> parent of b7148e8 (added photo in new stlye 3 ek sath)
 =======
 >>>>>>> parent of b7148e8 (added photo in new stlye 3 ek sath)
 /* Project Section */
@@ -317,6 +320,7 @@ h2 {
 }
 
 
+<<<<<<< HEAD
 /* Gallery Section */
 .photo-grid {
     display: grid;
@@ -339,6 +343,8 @@ h2 {
 }
 
 
+=======
+>>>>>>> parent of b7148e8 (added photo in new stlye 3 ek sath)
 /* Education Timeline */
 .timeline {
     position: relative;
@@ -465,6 +471,7 @@ nav ul li a:hover,
         padding: 6rem 0;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     .hero-photo {
         width: 180px;
@@ -474,6 +481,8 @@ nav ul li a:hover,
         padding: 1.5rem;
         max-width: 90%;
     }
+=======
+>>>>>>> parent of b7148e8 (added photo in new stlye 3 ek sath)
 =======
 >>>>>>> parent of b7148e8 (added photo in new stlye 3 ek sath)
 }
