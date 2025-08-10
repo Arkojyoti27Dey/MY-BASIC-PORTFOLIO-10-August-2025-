@@ -1,42 +1,57 @@
+/* --- INCEPTURE Themed Styles --- */
+
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 /* General Body Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.8;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light gray text for readability */
 }
 
 /* Container for centered content */
 .container {
-    width: 80%;
+    width: 85%;
     margin: auto;
     overflow: hidden;
+    padding: 0 20px;
 }
 
 /* Header and Navigation */
 header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
+    background: rgba(18, 18, 18, 0.8); /* Slightly transparent dark background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    padding: 1.5rem 0;
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000;
+    border-bottom: 1px solid #2a2a2a;
 }
 
 header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
+    width: 85%;
     margin: auto;
 }
 
 header h1 {
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+header h1:hover {
+    color: #00ff9b; /* Accent color on hover */
+    cursor: default;
 }
 
 header ul {
@@ -47,131 +62,150 @@ header ul {
 
 header li {
     display: inline;
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 header a {
-    color: #fff;
+    color: #e0e0e0;
     text-decoration: none;
     font-size: 1rem;
-    transition: color 0.3s ease;
+    font-weight: 400;
+    transition: color 0.3s ease-in-out;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+header a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #00ff9b;
+    transition: width 0.3s ease-in-out;
 }
 
 header a:hover {
-    color: #5cb85c;
+    color: #ffffff;
+}
+
+header a:hover::after {
+    width: 100%;
 }
 
 /* Section Styling */
 section {
-    padding: 40px 0;
-    border-bottom: 1px solid #ddd;
-}
-
-section:last-of-type {
-    border-bottom: none;
+    padding: 60px 0;
 }
 
 h2 {
     text-align: center;
-    margin-bottom: 30px;
-    font-size: 2.5rem;
-    color: #333;
+    margin-bottom: 50px;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-/* Card styling for education, skills, and projects */
+h3 {
+    font-size: 1.75rem;
+    color: #00ff9b; /* Accent color for subheadings */
+    margin-bottom: 15px;
+}
+
+/* Card styling */
 .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
 }
 
 .card {
-    background: #fff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-    flex-basis: 30%; /* Adjust basis for number of cards per row */
-    min-width: 280px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #1e1e1e; /* Slightly lighter dark for cards */
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #2a2a2a;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transform: translateY(-10px);
+    border-color: #00ff9b;
+    box-shadow: 0 10px 20px rgba(0, 255, 155, 0.1);
 }
 
-.card h3 {
-    margin-top: 0;
-    color: #5cb85c;
+.card p {
+    color: #b0b0b0; /* Softer text color inside cards */
 }
 
 /* Project Specific Card */
-.project-card {
-    flex-basis: 100%;
-}
-
 .project-card ul {
     padding-left: 20px;
+    color: #b0b0b0;
 }
+
+.project-card li {
+    margin-bottom: 10px;
+}
+
+.project-card strong {
+    color: #00ff9b;
+    font-weight: 600;
+}
+
 
 /* Contact Section */
 #contact {
-    background: #fff;
+    background: #1e1e1e;
     text-align: center;
+    border-radius: 10px;
+    margin: 40px auto;
+}
+
+#contact .container {
+    max-width: 700px;
 }
 
 #contact p {
     font-size: 1.1rem;
+    margin-bottom: 1rem;
 }
 
 #contact a {
-    color: #5cb85c;
+    color: #00ff9b;
     text-decoration: none;
+    font-weight: 600;
+    transition: text-shadow 0.3s ease;
 }
 
 #contact a:hover {
-    text-decoration: underline;
+    text-shadow: 0 0 8px rgba(0, 255, 155, 0.8);
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 20px;
-    background: #333;
-    color: #fff;
-    margin-top: 20px;
+    padding: 30px;
+    background: #121212;
+    color: #666;
+    margin-top: 40px;
+    border-top: 1px solid #2a2a2a;
 }
 
 /* Responsive Design */
 @media(max-width: 768px) {
     header nav {
         flex-direction: column;
-    }
-
-    header h1 {
-        margin-bottom: 10px;
-    }
-
-    header ul {
-        text-align: center;
-    }
-
-    header li {
-        display: block;
-        margin: 10px 0;
+        gap: 20px;
     }
 
     .container {
-        width: 90%;
-    }
-
-    .card {
-        flex-basis: 100%;
+        width: 95%;
     }
 
     h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 }
