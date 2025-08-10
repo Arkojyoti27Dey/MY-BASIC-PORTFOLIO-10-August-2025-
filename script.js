@@ -32,6 +32,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- NEW: Date Time Update Logic ---
+    function updateDateTime() {
+        const now = new Date();
+        const dateTimeElement = document.getElementById('datetime');
+
+        if (dateTimeElement) {
+            // Format the date (e.g., "Sunday, August 10, 2025")
+            const date = now.toLocaleDateString(undefined, {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            // Format the time (e.g., "08:42:55 PM")
+            const time = now.toLocaleTimeString(undefined, {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            });
+
+            // Get milliseconds and pad with leading zeros
+            const milliseconds = String(now.getMilliseconds()).padStart(3, '0');
+
+            // Update the HTML content
+            dateTimeElement.innerHTML = `${date} <br> ${time}:${milliseconds}`;
+        }
+    }
+
+    // Call it once immediately to avoid a delay, then set an interval
+    updateDateTime();
+    setInterval(updateDateTime, 100); // Update frequently for smooth milliseconds
 
     // --- Scroll Animation Logic ---
     const scrollSections = document.querySelectorAll('.scroll-section');

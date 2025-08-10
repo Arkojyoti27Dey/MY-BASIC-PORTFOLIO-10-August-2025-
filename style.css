@@ -75,15 +75,33 @@ nav {
     margin: 0 auto;
 }
 
+/* --- NEW: Styles for image logo --- */
 .logo a {
+    display: block;
+    line-height: 0; /* Removes extra space around the image */
+}
+
+.logo img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-color);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* --- NEW: Styles for Date-Time Display --- */
+#datetime-container {
     color: var(--text-color);
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: 700;
-    border: 2px solid var(--text-color);
-    padding: 0.2rem 0.6rem;
-    border-radius: 4px;
-    transition: all 0.3s ease;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    text-align: center;
+    background: rgba(30, 30, 30, 0.6);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--secondary-color);
+    line-height: 1.4;
+    flex-shrink: 0; /* Prevents the clock from shrinking */
 }
 
 nav ul {
@@ -148,24 +166,32 @@ h2 {
     color: #a0a0a0;
 }
 
+.social-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
 .social-links a {
     color: var(--text-color);
     text-decoration: none;
-    margin: 0 1rem;
     font-weight: 500;
     position: relative;
     padding-bottom: 5px;
+    font-size: 1rem;
 }
 
 .social-links a::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 0;
     height: 2px;
     background-color: var(--accent-color);
-    transition: width 0.3s ease;
+    transition: width 0.4s ease;
 }
 
 /* About Section */
@@ -188,12 +214,14 @@ h2 {
     border-radius: 8px;
     border: 2px solid var(--secondary-color);
     position: absolute;
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .about-photo:hover {
     z-index: 10;
     transform: scale(1.1) rotate(0deg) !important;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
 }
 
 .photo1 {
@@ -356,9 +384,8 @@ nav ul li a:hover,
     width: 100%;
 }
 
-.logo a:hover {
-    background: var(--text-color);
-    color: var(--bg-color);
+.logo a:hover img {
+    transform: scale(1.1) rotate(6deg);
 }
 
 .project-card:hover {
@@ -394,9 +421,22 @@ nav ul li a:hover,
     }
 
     nav ul {
-        display: none; /* Simple hiding for mobile, can be replaced with a burger menu */
+        display: none; /* Hides nav links on mobile */
     }
     
+    nav {
+        justify-content: space-between;
+    }
+
+    #datetime-container {
+        display: none; /* Hides clock on mobile for more space */
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
     section {
         padding: 6rem 0;
     }
