@@ -3,126 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arkojyoti Dey - Portfolio</title>
+    <title>Arkojyoti Dey | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Example for icons, you can replace with a preferred library -->
 </head>
 <body>
 
-    <!-- Header Section -->
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Header & Navigation -->
     <header>
         <nav>
-            <h1>Arkojyoti Dey</h1>
+            <div class="logo">
+                <a href="#">AD</a>
+            </div>
             <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-
-        <!-- About Section -->
-        <section id="about">
-            <h2>About Me</h2>
-            <div>
-                <p>
-                    Computer Science undergraduate with hands-on project experience in building and evaluating Machine Learning models using Python and Java. Passionate about applying AI to solve real-world challenges in a collaborative environment. Proven ability to contribute to complex projects from conception to deployment, with a strong foundation in data structures and algorithms.
-                </p>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Arkojyoti Dey</h1>
+                <p>Computer Science student passionate about building and evaluating Machine Learning models. Welcome to my digital space.</p>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/arkojyoti-dey" target="_blank">LinkedIn</a>
+                    <a href="mailto:arkojyoti.dey008@gmail.com">Email</a>
+                    <a href="https://github.com/your-github" target="_blank">GitHub</a> <!-- Add your GitHub link -->
+                </div>
             </div>
         </section>
 
-        <!-- Education Section -->
-        <section id="education">
-            <h2>Education</h2>
-            <div>
-                <div>
-                    <h3>B.Tech in Computer Science and Engineering</h3>
-                    <p>Indian Institute of Engineering Science and Technology (IIEST), Shibpur</p>
-                    <p>Expected 2027</p>
-                    <p>CGPA: 8.17/10.0</p>
+        <!-- About Section -->
+        <section id="about" class="scroll-section">
+            <h2>About Me</h2>
+            <p>
+                I am a Computer Science undergraduate at IIEST, Shibpur, with hands-on project experience in building and evaluating Machine Learning models using Python and Java. I'm passionate about applying AI to solve real-world challenges in a collaborative environment. I have a proven ability to contribute to complex projects from conception to deployment, with a strong foundation in data structures and algorithms.
+            </p>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="scroll-section">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Explainable AI for Hate Speech Detection</h3>
+                    <p class="project-tech">Python | PyTorch | Transformers | NLP | Gradio</p>
+                    <p>Co-developed an explainable AI model to enhance content moderation. Implemented and trained Transformer models (RoBERTa, T5), achieving state-of-the-art results on the HateXplain benchmark. Deployed a real-time interactive dashboard using Gradio.</p>
+                    <a href="#" class="project-link">View Project &rarr;</a>
                 </div>
-                <div>
-                    <h3>Higher Secondary (ISC)</h3>
-                    <p>Convent of Jesus and Mary School</p>
-                    <p>99.25% (2022)</p>
+                <div class="project-card">
+                    <h3>Personal Portfolio Website</h3>
+                    <p class="project-tech">HTML | CSS | JavaScript</p>
+                    <p>Designed and developed a responsive personal website from scratch to showcase my technical skills, projects, and professional journey. This very site is the result of that work.</p>
+                    <a href="#" class="project-link">View Source &rarr;</a>
                 </div>
-                <div>
-                    <h3>Secondary (ICSE)</h3>
-                    <p>Convent of Jesus and Mary School</p>
-                    <p>97.6% (2020)</p>
-                </div>
+                 <!-- Add more project cards here -->
             </div>
         </section>
 
         <!-- Skills Section -->
-        <section id="skills">
+        <section id="skills" class="scroll-section">
             <h2>Technical Skills</h2>
-            <div>
-                <div>
+            <div class="skills-container">
+                <div class="skill-category">
                     <h3>Languages</h3>
-                    <p>Python, Java, C++, C</p>
+                    <ul>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>C++</li>
+                        <li>C</li>
+                    </ul>
                 </div>
-                <div>
+                <div class="skill-category">
                     <h3>Machine Learning</h3>
-                    <p>PyTorch, Transformers, NLP, Scikit-learn</p>
+                    <ul>
+                        <li>PyTorch</li>
+                        <li>Transformers</li>
+                        <li>NLP</li>
+                        <li>Scikit-learn</li>
+                    </ul>
                 </div>
-                <div>
-                    <h3>Databases</h3>
-                    <p>MongoDB, SQL</p>
+                <div class="skill-category">
+                    <h3>Web & Databases</h3>
+                    <ul>
+                        <li>HTML, CSS, JS</li>
+                        <li>MongoDB</li>
+                        <li>SQL</li>
+                    </ul>
                 </div>
-                <div>
-                    <h3>Web Technologies</h3>
-                    <p>HTML, CSS, JavaScript</p>
+                <div class="skill-category">
+                    <h3>Developer Tools</h3>
+                    <ul>
+                        <li>Git</li>
+                        <li>Gradio</li>
+                        <li>Docker (Basic)</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2>Projects</h2>
-            <div>
-                <div>
-                    <h3>Explainable AI for Hate Speech Detection (Ex-HateQA)</h3>
-                    <p><span>Technologies:</span> Python, PyTorch, Transformers, NLP, Gradio</p>
-                    <ul>
-                        <li>Co-developed an explainable AI model to enhance content moderation and mitigate risks from harmful online content.</li>
-                        <li>Implemented and trained Transformer models (RoBERTa, T5) in PyTorch, achieving state-of-the-art results on the HateXplain benchmark.</li>
-                        <li>Designed and deployed a real-time interactive dashboard using Gradio to demonstrate the model's transparency.</li>
-                    </ul>
+        <!-- Education & Certifications Section -->
+        <section id="education" class="scroll-section">
+            <h2>Education & Certifications</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>B.Tech in Computer Science and Engineering</h3>
+                    <p>Indian Institute of Engineering Science and Technology (IIEST), Shibpur</p>
+                    <span class="timeline-date">Expected 2027</span>
                 </div>
-                <div>
-                    <h3>Personal Portfolio Website</h3>
-                    <p><span>Technologies:</span> HTML, CSS, JavaScript</p>
-                    <ul>
-                        <li>Developing a responsive personal website to showcase technical skills and project work.</li>
-                    </ul>
+                <div class="timeline-item">
+                    <h3>Business Communication Certificate</h3>
+                    <p>Focused on professional writing and effective corporate communication.</p>
+                    <span class="timeline-date">In Progress</span>
+                </div>
+                <div class="timeline-item">
+                    <h3>Prompt Engineering for ChatGPT</h3>
+                    <p>Certificate in crafting effective prompts to leverage AI models.</p>
+                    <span class="timeline-date">In Progress</span>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact">
+        <section id="contact" class="scroll-section">
             <h2>Get In Touch</h2>
-            <div>
-                <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team.</p>
-                <p><strong>Email:</strong> <a href="mailto:arkojyoti.dey008@gmail.com">arkojyoti.dey008@gmail.com</a></p>
-                <p><strong>Phone:</strong> +91-9883817533</p>
-                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/arkojyoti-dey" target="_blank">linkedin.com/in/arkojyoti-dey</a></p>
-            </div>
+            <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out.</p>
+            <a href="mailto:arkojyoti.dey008@gmail.com" class="cta-button">Say Hello</a>
         </section>
-
     </main>
 
     <!-- Footer -->
     <footer>
-        <div>
-            <p>&copy; 2024 Arkojyoti Dey. All Rights Reserved.</p>
-        </div>
+        <p>&copy; 2024 Arkojyoti Dey. Crafted with care.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
