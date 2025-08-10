@@ -77,22 +77,20 @@ nav {
     margin: 0 auto;
 }
 
-/* --- UPDATED: Styles for larger image logo --- */
 .logo a {
     display: block;
     line-height: 0; 
 }
 
 .logo img {
-    height: 65px; /* Increased size */
-    width: 65px;  /* Increased size */
+    height: 65px; 
+    width: 65px;  
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--accent-color);
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* --- UPDATED: Styles for Digital Clock --- */
 #datetime-container {
     font-family: var(--clock-font-family);
     text-align: center;
@@ -100,8 +98,8 @@ nav {
     padding: 0;
     border: none;
     flex-shrink: 0;
-    color: #a76bfa; /* Light purple/blue color */
-    text-shadow: 0 0 5px #a76bfa, 0 0 10px #a76bfa; /* Glow effect */
+    color: #a76bfa; 
+    text-shadow: 0 0 5px #a76bfa, 0 0 10px #a76bfa; 
 }
 
 #datetime {
@@ -212,55 +210,37 @@ h2 {
     transition: width 0.4s ease;
 }
 
-/* About Section */
+/* --- UPDATED: About Section Gallery --- */
 .about-container {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr; /* Give more equal space */
     gap: 3rem;
     align-items: center;
 }
 
 .about-photos {
-    position: relative;
-    height: 350px; 
+    display: flex; /* Use flexbox for layout */
+    gap: 1rem; /* Space between photos */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .about-photo {
-    width: 200px;
-    height: 280px;
+    width: 150px; /* Adjust size for side-by-side display */
+    height: 210px;
     object-fit: cover;
     border-radius: 8px;
     border: 2px solid var(--secondary-color);
-    position: absolute;
     transition: transform 0.4s ease-in-out, box-shadow 0.4s ease;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .about-photo:hover {
     z-index: 10;
-    transform: scale(1.1) rotate(0deg) !important;
+    transform: scale(1.1) translateY(-10px); /* Lift and scale on hover */
     box-shadow: 0 15px 30px rgba(0,0,0,0.3);
 }
-
-.photo1 {
-    top: 0;
-    left: 0;
-    transform: rotate(-10deg);
-}
-
-.photo2 {
-    top: 50px;
-    left: 80px;
-    transform: rotate(5deg);
-    z-index: 2;
-}
-
-.photo3 {
-    top: 20px;
-    left: 160px;
-    transform: rotate(15deg);
-}
-
 
 /* Project Section */
 .project-grid {
@@ -466,6 +446,6 @@ nav ul li a:hover,
 
     .about-photos {
         margin: 0 auto;
-        height: 300px;
+        height: auto; /* Adjust height for flex layout */
     }
 }
