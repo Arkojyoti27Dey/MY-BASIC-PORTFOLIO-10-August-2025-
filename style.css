@@ -1,0 +1,177 @@
+/* General Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Container for centered content */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header and Navigation */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+header ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+header li {
+    display: inline;
+    margin-left: 20px;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+header a:hover {
+    color: #5cb85c;
+}
+
+/* Section Styling */
+section {
+    padding: 40px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+/* Card styling for education, skills, and projects */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    flex-basis: 30%; /* Adjust basis for number of cards per row */
+    min-width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #5cb85c;
+}
+
+/* Project Specific Card */
+.project-card {
+    flex-basis: 100%;
+}
+
+.project-card ul {
+    padding-left: 20px;
+}
+
+/* Contact Section */
+#contact {
+    background: #fff;
+    text-align: center;
+}
+
+#contact p {
+    font-size: 1.1rem;
+}
+
+#contact a {
+    color: #5cb85c;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media(max-width: 768px) {
+    header nav {
+        flex-direction: column;
+    }
+
+    header h1 {
+        margin-bottom: 10px;
+    }
+
+    header ul {
+        text-align: center;
+    }
+
+    header li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .card {
+        flex-basis: 100%;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
