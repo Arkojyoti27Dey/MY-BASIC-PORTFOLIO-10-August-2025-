@@ -8,23 +8,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const posX = e.clientX;
         const posY = e.clientY;
 
-        // Move the dot directly
         cursorDot.style.left = `${posX}px`;
         cursorDot.style.top = `${posY}px`;
 
-        // Animate the outline to follow the cursor
         cursorOutline.animate({
             left: `${posX}px`,
             top: `${posY}px`
         }, { duration: 500, fill: 'forwards' });
     });
 
-    // Add hover effects for links and other interactive elements
     const interactiveElements = document.querySelectorAll('a, button, .project-card');
     interactiveElements.forEach(el => {
         el.addEventListener('mouseover', () => {
             cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
-            cursorOutline.style.borderColor = '#fff'; // Change color on hover
+            cursorOutline.style.borderColor = '#fff';
         });
         el.addEventListener('mouseout', () => {
             cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
@@ -32,55 +29,50 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- NEW: Date Time Update Logic ---
+    // --- UPDATED: Digital Clock Logic ---
     function updateDateTime() {
-        const now = new Date();
-        const dateTimeElement = document.getElementById('datetime');
+        const dateLineElement = document.getElementById('date-line');
+        const timeLineElement = document.getElementById('time-line');
 
-        if (dateTimeElement) {
-            // Format the date (e.g., "Sunday, August 10, 2025")
-            const date = now.toLocaleDateString(undefined, {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
+        if (dateLineElement && timeLineElement) {
+            const now = new Date();
 
-            // Format the time (e.g., "08:42:55 PM")
-            const time = now.toLocaleTimeString(undefined, {
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit',
-                hour12: true
-            });
+            // Helper function to pad numbers with a leading zero
+            const padZero = (num) => String(num).padStart(2, '0');
 
-            // Get milliseconds and pad with leading zeros
-            const milliseconds = String(now.getMilliseconds()).padStart(3, '0');
+            // Format the date: YYYY-MM-DD DAY
+            const year = now.getFullYear();
+            const month = padZero(now.getMonth() + 1);
+            const day = padZero(now.getDate());
+            const dayOfWeek = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'][now.getDay()];
+            dateLineElement.textContent = `${year}-${month}-${day} ${dayOfWeek}`;
 
-            // Update the HTML content
-            dateTimeElement.innerHTML = `${date} <br> ${time}:${milliseconds}`;
+            // Format the time: HH:MM:SS AM/PM
+            let hours = now.getHours();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // The hour '0' should be '12'
+            const minutes = padZero(now.getMinutes());
+            const seconds = padZero(now.getSeconds());
+            timeLineElement.textContent = `${padZero(hours)}:${minutes}:${seconds} ${ampm}`;
         }
     }
 
-    // Call it once immediately to avoid a delay, then set an interval
     updateDateTime();
-    setInterval(updateDateTime, 100); // Update frequently for smooth milliseconds
+    setInterval(updateDateTime, 1000); // Update every second
 
     // --- Scroll Animation Logic ---
     const scrollSections = document.querySelectorAll('.scroll-section');
-
     const observerOptions = {
-        root: null, // relative to the viewport
+        root: null,
         rootMargin: '0px',
-        threshold: 0.1 // 10% of the item must be visible
+        threshold: 0.1
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // Optional: stop observing once it's visible
-                // observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -89,16 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-
     // --- Smooth Scrolling for Nav Links ---
     const navLinks = document.querySelectorAll('nav a[href^="#"]');
-
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             let targetId = this.getAttribute('href');
             let targetElement = document.querySelector(targetId);
-
             if (targetElement) {
                 targetElement.scrollIntoView({
                     behavior: 'smooth',
@@ -107,5 +96,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
 });

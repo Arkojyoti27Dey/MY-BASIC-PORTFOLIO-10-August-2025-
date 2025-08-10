@@ -7,6 +7,8 @@
     --accent-color: #bb86fc;
     --accent-hover-color: #a76bfa;
     --font-family: 'Inter', sans-serif;
+    /* Font for the digital clock */
+    --clock-font-family: 'Orbitron', sans-serif;
 }
 
 * {
@@ -75,34 +77,50 @@ nav {
     margin: 0 auto;
 }
 
-/* --- NEW: Styles for image logo --- */
+/* --- UPDATED: Styles for larger image logo --- */
 .logo a {
     display: block;
-    line-height: 0; /* Removes extra space around the image */
+    line-height: 0; 
 }
 
 .logo img {
-    height: 50px;
-    width: 50px;
+    height: 65px; /* Increased size */
+    width: 65px;  /* Increased size */
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--accent-color);
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* --- NEW: Styles for Date-Time Display --- */
+/* --- UPDATED: Styles for Digital Clock --- */
 #datetime-container {
-    color: var(--text-color);
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.9rem;
+    font-family: var(--clock-font-family);
     text-align: center;
-    background: rgba(30, 30, 30, 0.6);
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    border: 1px solid var(--secondary-color);
-    line-height: 1.4;
-    flex-shrink: 0; /* Prevents the clock from shrinking */
+    background: transparent;
+    padding: 0;
+    border: none;
+    flex-shrink: 0;
+    color: #a76bfa; /* Light purple/blue color */
+    text-shadow: 0 0 5px #a76bfa, 0 0 10px #a76bfa; /* Glow effect */
 }
+
+#datetime {
+    display: flex;
+    flex-direction: column;
+}
+
+#date-line {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+#time-line {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
 
 nav ul {
     list-style: none;
@@ -204,7 +222,7 @@ h2 {
 
 .about-photos {
     position: relative;
-    height: 350px; /* Container for positioning */
+    height: 350px; 
 }
 
 .about-photo {
@@ -375,7 +393,7 @@ footer {
 
 /* Hover & Animation Effects */
 a:hover {
-    cursor: none; /* Ensure custom cursor is used */
+    cursor: none; 
 }
 
 nav ul li a:hover,
@@ -421,7 +439,7 @@ nav ul li a:hover,
     }
 
     nav ul {
-        display: none; /* Hides nav links on mobile */
+        display: none; 
     }
     
     nav {
@@ -429,7 +447,7 @@ nav ul li a:hover,
     }
 
     #datetime-container {
-        display: none; /* Hides clock on mobile for more space */
+        display: none;
     }
 
     .social-links {

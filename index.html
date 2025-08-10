@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Example for icons, you can replace with a preferred library -->
+    <!-- Added Orbitron font for the digital clock style -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -20,13 +21,15 @@
     <header>
         <nav>
             <div class="logo">
-                <!-- Replaced text logo with an image -->
                 <a href="#"><img src="logo photo.png" alt="Arkojyoti Dey"></a>
             </div>
             
-            <!-- Added Aesthetic Date-Time Display -->
+            <!-- Updated Date-Time Container Structure -->
             <div id="datetime-container">
-                <div id="datetime">Loading...</div>
+                <div id="datetime">
+                    <span id="date-line"></span>
+                    <span id="time-line"></span>
+                </div>
             </div>
 
             <ul>
@@ -44,7 +47,6 @@
             <div class="hero-content">
                 <h1>Arkojyoti Dey</h1>
                 <p>Computer Science student passionate about building and evaluating Machine Learning models. Welcome to my digital space.</p>
-                <!-- Updated Social Links to show text -->
                 <div class="social-links">
                     <a href="https://linkedin.com/in/arkojyoti-dey" target="_blank">LinkedIn: arkojyoti-dey</a>
                     <a href="mailto:arkojyotidey008@gmail.com">Email: arkojyotidey008@gmail.com</a>
@@ -86,7 +88,6 @@
                     <p>Designed and developed a responsive personal website from scratch to showcase my technical skills, projects, and professional journey. This very site is the result of that work.</p>
                     <a href="#" class="project-link">View Source &rarr;</a>
                 </div>
-                 <!-- Add more project cards here -->
             </div>
         </section>
 
@@ -157,7 +158,6 @@
         <section id="contact" class="scroll-section">
             <h2>Get In Touch</h2>
             <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out.</p>
-            <!-- Updated contact button to show email -->
             <a href="mailto:arkojyotidey008@gmail.com" class="cta-button">Say Hello (arkojyotidey008@gmail.com)</a>
         </section>
     </main>
