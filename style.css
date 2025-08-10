@@ -14,6 +14,39 @@
     to { transform: translateY(-2000px); }
 }
 
+@keyframes pulse {
+    0%, 100% {
+        text-shadow: 0 0 5px rgba(199, 255, 39, 0.8), 0 0 10px rgba(199, 255, 39, 0.6);
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(199, 255, 39, 1), 0 0 20px rgba(199, 255, 39, 0.8);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes shooting-star {
+    0% {
+        transform: translateX(100vw) translateY(-100px) rotate(215deg);
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100vw) translateY(900px) rotate(215deg);
+        opacity: 0;
+    }
+}
+
+
 /* General Body Styles */
 body {
     font-family: 'Poppins', sans-serif;
@@ -36,8 +69,23 @@ body {
     height: 100%;
     display: block;
     background: transparent url(https://static.wixstatic.com/media/c22c23_de30a876dd064e98997b25942f3fad35~mv2.png) repeat top center;
-    z-index: -1;
+    z-index: -2;
     animation: stars 200s linear infinite;
+}
+
+/* Shooting star effect */
+.shooting-star {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 2px;
+    background: linear-gradient(-45deg, rgba(199, 255, 39, 1), rgba(199, 255, 39, 0));
+    border-radius: 999px;
+    filter: drop-shadow(0 0 6px rgba(199, 255, 39, 1));
+    animation: shooting-star 15s linear infinite;
+    animation-delay: 2s;
+    z-index: -1;
 }
 
 /* Container for centered content */
@@ -79,6 +127,7 @@ header h1 {
     color: #ffffff;
     letter-spacing: 1px;
     text-shadow: 0 0 5px rgba(199, 255, 39, 0.8);
+    animation: pulse 4s ease-in-out infinite;
 }
 
 header ul {
@@ -131,6 +180,8 @@ h3 {
     color: #CFFF28; /* Accent color */
     margin-bottom: 20px;
     text-shadow: 0 0 5px rgba(199, 255, 39, 0.5);
+    animation: pulse 4s ease-in-out infinite;
+    animation-delay: 0.5s;
 }
 
 /* Card styling */
@@ -149,12 +200,18 @@ h3 {
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    animation: float 6s ease-in-out infinite;
+}
+
+.card:nth-child(2n) {
+    animation-delay: -3s; /* Offset animation for every other card */
 }
 
 .card:hover {
     transform: translateY(-10px);
     border-color: rgba(199, 255, 39, 0.8);
     box-shadow: 0 10px 30px rgba(199, 255, 39, 0.1);
+    animation-play-state: paused; /* Pause floating animation on hover */
 }
 
 .card p {
