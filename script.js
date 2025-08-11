@@ -17,41 +17,37 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { duration: 500, fill: 'forwards' });
     });
 
-    const interactiveElements = document.querySelectorAll('a, button, .project-card');
+    const interactiveElements = document.querySelectorAll('a, button, .project-card, .grid-tile');
     interactiveElements.forEach(el => {
         el.addEventListener('mouseover', () => {
             cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
-            cursorOutline.style.borderColor = '#fff';
+            cursorOutline.style.borderColor = 'var(--accent-color)';
         });
         el.addEventListener('mouseout', () => {
             cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
-            cursorOutline.style.borderColor = 'var(--accent-color)';
+            cursorOutline.style.borderColor = 'var(--accent-color)'; // Keep it the accent color
         });
     });
 
-    // --- UPDATED: Digital Clock Logic ---
+    // --- Digital Clock Logic ---
     function updateDateTime() {
         const dateLineElement = document.getElementById('date-line');
         const timeLineElement = document.getElementById('time-line');
 
         if (dateLineElement && timeLineElement) {
             const now = new Date();
-
-            // Helper function to pad numbers with a leading zero
             const padZero = (num) => String(num).padStart(2, '0');
 
-            // Format the date: YYYY-MM-DD DAY
             const year = now.getFullYear();
             const month = padZero(now.getMonth() + 1);
             const day = padZero(now.getDate());
             const dayOfWeek = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'][now.getDay()];
             dateLineElement.textContent = `${year}-${month}-${day} ${dayOfWeek}`;
 
-            // Format the time: HH:MM:SS AM/PM
             let hours = now.getHours();
             const ampm = hours >= 12 ? 'PM' : 'AM';
             hours = hours % 12;
-            hours = hours ? hours : 12; // The hour '0' should be '12'
+            hours = hours ? hours : 12;
             const minutes = padZero(now.getMinutes());
             const seconds = padZero(now.getSeconds());
             timeLineElement.textContent = `${padZero(hours)}:${minutes}:${seconds} ${ampm}`;
@@ -59,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     updateDateTime();
-    setInterval(updateDateTime, 1000); // Update every second
+    setInterval(updateDateTime, 1000);
 
     // --- Scroll Animation Logic ---
     const scrollSections = document.querySelectorAll('.scroll-section');

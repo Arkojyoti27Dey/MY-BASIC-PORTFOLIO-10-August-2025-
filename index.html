@@ -8,72 +8,69 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
 
-    <!-- Custom Cursor -->
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
-    <!-- Header & Navigation -->
     <header>
         <nav>
             <div class="logo">
                 <a href="#"><img src="logo photo.png" alt="Arkojyoti Dey"></a>
             </div>
             
-            <div id="datetime-container">
-                <div id="datetime">
-                    <span id="date-line"></span>
-                    <span id="time-line"></span>
-                </div>
-            </div>
-
             <ul>
-                <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section id="hero">
-            <div class="hero-content">
+        <section id="landing-grid">
+            <div class="grid-tile tile-intro">
                 <h1>Arkojyoti Dey</h1>
-                <p>Computer Science student passionate about building and evaluating Machine Learning models. Welcome to my digital space.</p>
-                <!-- UPDATED: Added Instagram Link -->
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/arkojyoti-dey" target="_blank">LinkedIn: arkojyoti-dey</a>
-                    <a href="https://github.com/Arkojyoti27Dey" target="_blank">GitHub: Arkojyoti27Dey</a>
-                    <a href="https://www.instagram.com/ar45_ko27" target="_blank">Instagram: ar45_ko27</a>
-                    <a href="mailto:arkojyotidey008@gmail.com">Email: arkojyotidey008@gmail.com</a>
+                <p>Student, Developer, and ML Enthusiast building for the future.</p>
+            </div>
+            <div class="grid-tile tile-main-photo">
+                <img src="prominent_photo.jpg" alt="A photo of Arkojyoti Dey">
+            </div>
+            <div class="grid-tile tile-about">
+                 <p>
+                    I am a Computer Science undergraduate at IIEST, Shibpur, with hands-on project experience in building and evaluating Machine Learning models. I'm passionate about applying AI to solve real-world challenges.
+                </p>
+            </div>
+            <div class="grid-tile tile-clock">
+                <div id="datetime-container">
+                    <div id="datetime">
+                        <span id="time-line"></span>
+                        <span id="date-line"></span>
+                    </div>
                 </div>
+            </div>
+             <div class="grid-tile tile-say-hi">
+                <a href="#contact">
+                    <h2>Say Hi</h2>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="grid-tile tile-social-links">
+                <a href="https://linkedin.com/in/arkojyoti-dey" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/Arkojyoti27Dey" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/ar45_ko27" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:arkojyotidey008@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div class="grid-tile tile-photo-gallery">
+                 <img src="photo1.jpg" alt="A photo of Arkojyoti Dey" class="gallery-photo">
+                 <img src="photo2.jpg" alt="A photo of Arkojyoti Dey" class="gallery-photo">
+                 <img src="photo3.jpg" alt="A photo of Arkojyoti Dey" class="gallery-photo">
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="scroll-section">
-            <div class="about-container">
-                <div class="about-text">
-                    <h2>About Me</h2>
-                    <p>
-                        I am a Computer Science undergraduate at IIEST, Shibpur, with hands-on project experience in building and evaluating Machine Learning models using Python and Java. I'm passionate about applying AI to solve real-world challenges in a collaborative environment. I have a proven ability to contribute to complex projects from conception to deployment, with a strong foundation in data structures and algorithms.
-                    </p>
-                </div>
-                <!-- The photo container is now a flex container -->
-                <div class="about-photos">
-                    <img src="photo1.jpg" alt="A photo of Arkojyoti Dey" class="about-photo">
-                    <img src="photo2.jpg" alt="A photo of Arkojyoti Dey" class="about-photo">
-                    <img src="photo3.jpg" alt="A photo of Arkojyoti Dey" class="about-photo">
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
         <section id="projects" class="scroll-section">
             <h2>Projects</h2>
             <div class="project-grid">
@@ -92,7 +89,6 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills" class="scroll-section">
             <h2>Technical Skills</h2>
             <div class="skills-container">
@@ -133,7 +129,6 @@
             </div>
         </section>
 
-        <!-- Education & Certifications Section -->
         <section id="education" class="scroll-section">
             <h2>Education & Certifications</h2>
             <div class="timeline">
@@ -155,7 +150,6 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="scroll-section">
             <h2>Get In Touch</h2>
             <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out.</p>
@@ -163,9 +157,8 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Arkojyoti Dey. Crafted with care.</p>
+         <p>&copy; 2025 Arkojyoti Dey. Inspired by great design and crafted with care.</p>
     </footer>
 
     <script src="script.js"></script>
